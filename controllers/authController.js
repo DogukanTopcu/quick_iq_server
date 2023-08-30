@@ -11,7 +11,7 @@ export const createNewUser = async (req, res) => {
         surname: "",
         username: "",
         password: "",
-        totalScore: "",
+        totalscore: 0,
         gender: "",
         birthday: "",
         botId: "",
@@ -77,6 +77,7 @@ export const login = async (req, res) => {
             const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password);
             if (isPasswordCorrect) {
                 res.json(user);
+                console.log("User logged in successfully");
             } else {
                 res.status(400).send("Password is incorrect");
             }

@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import db from './config/db.js';
 import cors from 'cors';
 import authRouter from './routes/auth.js';
+import gameRouter from './routes/game.js';
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/game', gameRouter);
 
 app.listen(2000, () => console.log('Server running on port 2000'));

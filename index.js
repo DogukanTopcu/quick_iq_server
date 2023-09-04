@@ -4,6 +4,8 @@ import db from './config/db.js';
 import cors from 'cors';
 import authRouter from './routes/auth.js';
 import gameRouter from './routes/game.js';
+import axios from 'axios';
+import botRouter from './routes/bot.js';
 
 const app = express();
 
@@ -12,10 +14,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get('/', (req, res) => {
+    axios.get('http://127.0.0.1:8000/').then((res) => {
+        console.log(res.data);
+    }).catch((err) => {
+        console.log(err);
+    });
     res.send('Welcome to the QuickIQ Server');
 });
 
 app.use('/api/auth', authRouter);
 app.use('/api/game', gameRouter);
+app.use('/api/bot', botRouter);
+
 
 app.listen(2000, () => console.log('Server running on port 2000'));

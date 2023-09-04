@@ -7,6 +7,12 @@ const db = mysql.createConnection({
     database: 'quickiq'
 });
 
+
+// host name: quick-iq (Germany West Central)
+// db name: quick_iq
+// user: quick_iq
+// password: )U%bT]zmhJiG-7P
+
 db.connect((err) => {
     if (err) {
         throw err;

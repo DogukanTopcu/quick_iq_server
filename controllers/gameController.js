@@ -10,7 +10,7 @@ export const increaseScore = async (req, res) => {
         console.log("Score increased");
         console.log(userId);
         console.log(score);
-        res.json(result);
+        res.status(200);
     });
 };
 
@@ -24,7 +24,7 @@ export const level1_addData = async (req, res) => {
             res.status(400).send("Error while inserting data");
         }
         console.log("Data inserted to Level 1 Table");
-        res.status(200).send("Data inserted");
+        res.status(200)
     });
 }
 
@@ -38,6 +38,6 @@ export const level2_addData = async (req, res) => {
             res.status(400).send("Error while inserting data");
         }
         console.log("Data inserted to Level 2 Table");
-        res.status(200).send("Data inserted");
+        res.status(200)
     });
 }

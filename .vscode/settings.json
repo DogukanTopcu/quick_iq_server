@@ -1,4 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/1df32784-2c79-4860-9d83-ad5673791d94/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/quickiq-server",
+    "appService.defaultWebAppToDeploy": "/subscriptions/1df32784-2c79-4860-9d83-ad5673791d94/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/quick-iq-server",
     "appService.deploySubpath": "."
 }

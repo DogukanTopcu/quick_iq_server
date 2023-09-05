@@ -14,7 +14,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the QuickIQ Server');
+    db.query('SELECT * FROM users', (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        res.send(result);
+    });
+    // res.send('Welcome to the QuickIQ Server');
 });
 
 app.use('/api/auth', authRouter);

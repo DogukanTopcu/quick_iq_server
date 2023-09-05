@@ -79,9 +79,11 @@ export const login = async (req, res) => {
                 res.json(user);
                 console.log("User logged in successfully");
             } else {
+                console.log("Password is incorrect");
                 res.status(400).send("Password is incorrect");
             }
         } else {
+            console.log("Username doesn't exist");
             res.status(404).send("Username does not exist");
         }
     });

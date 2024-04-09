@@ -8,12 +8,13 @@ import mysql from 'mysql';
 //     database: 'quickiq'
 // });
 
+// Production
 const db = mysql.createConnection({
-    host: 'quick-iq.mysql.database.azure.com',
-    user: 'quick_iq',
-    password: ')U%bT]zmhJiG-7P',
-    database: 'quickiq',
-    port: 3306,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE_NAME,
+    port: process.env.DB_PORT,
     ssl: true
 });
 
